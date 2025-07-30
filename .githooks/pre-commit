@@ -1,0 +1,37 @@
+#! /bin/bash
+
+filename="public/src/js/swHash.js"
+
+echo "Saving unstaged changes to file and stash..."
+git diff --full-index --binary > /tmp/git-pre-commit-stash.$$
+git stash -q --keep-index
+
+echo ""
+echo "Retrieving current 'swHash.js':"
+oldSwHashContent="$(cat $filename)"
+echo "$oldSwHashContent"
+
+echo ""
+echo "Computing new 'swHash.js'"
+npm run sw:hash:update
+
+echo "Retrieving new 'swHash.js'"
+newSwHashContent="$(cat $filename)"
+echo "$newSwHashContent"
+
+echo "Writing back old 'swHash.js'"
+echo "$oldSwHashContent" > "$filename"
+
+echo ""
+echo "Restoring unstaged changed from file/stash"
+git apply --whitespace=nowarn --allow-empty < /tmp/git-pre-commit-stash.$$ && git stash drop -q
+rm /tmp/git-pre-commit-stash.$$
+
+if [ "$oldSwHashContent" = "$newSwHashContent" ]; then
+    echo "Same hash, please proceed!"
+    echo ""
+    exit 0
+else
+    echo "New hash, please update and stage!"
+    exit 1
+fi

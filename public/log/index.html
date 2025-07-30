@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Push Log | amediaPWA</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/favicon-polpos.ico">
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <a class="mdl-navigation__link" href="/">
+            <span class="mdl-layout-title">amediaPWA - <i><span class="newspaper-name">undefined</span></i></span>
+          </a>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="/">Home</a>
+            <a class="mdl-navigation__link" href="/log">Log</a>
+            <a class="mdl-navigation__link" href="/debug">Debug</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">amediaPWA</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Home</a>
+          <a class="mdl-navigation__link" href="/log">Log</a>
+          <a class="mdl-navigation__link" href="/debug">Debug</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mat-typography">
+        <div class="kvasir-wrapper mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col text-center">
+            <h3>
+              Push Log
+            </h3>
+            <p>
+              To compare against send time, copy and paste the <a class="kvasir-link"
+                href="javascript:alert('Page didn\'t load properly')">feed from Kvasir</a> in JSON-format:
+            </p>
+            <textarea class="kvasir-input" placeholder="copy paste Kvasir here"></textarea>
+            <br />
+            <button
+              class="kvasir-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Process Kvasir
+            </button>
+          </div>
+        </div>
+        <div class="push-log mdl-grid">
+          <i>Placeholder...</i>
+        </div>
+        <div class="log-actions mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col text-center">
+            <h3>
+              Export Actions:
+            </h3>
+            <p>
+              These actions may be used to export data before e.g. resetting for debugging.
+            </p>
+            <button
+              class="export-log mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export FCM Log
+            </button>
+            <p></p>
+            <button
+              class="export-events mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export Push Events
+            </button>
+            <p></p>
+            <button
+              class="export-kvasir mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export Kvasir
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script defer src="/src/js/material.min.js"></script>
+  <script src="/main.js" type="module"></script>
+</body>
+
+</html>

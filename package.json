@@ -1,0 +1,29 @@
+{
+  "name": "amedia-pwa-poc",
+  "version": "1.0.0",
+  "description": "An Amedia Proof of Concept for a PWA push app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server -c-1",
+    "sw:hash:internal": "echo \"export const swHash = '${swHash%% *}';\" > public/src/js/swHash.js && npm run build",
+    "sw:hash:placeholder": "swHash=\"...\" npm run sw:hash:internal",
+    "sw:hash:update": "npm run sw:hash:placeholder && swHash=\"$(sha256sum public/sw.js)\" npm run sw:hash:internal",
+    "build": "webpack",
+    "emulate": "firebase emulators:start",
+    "preview": "firebase hosting:channel:deploy preview",
+    "deploy:avisao": "npm run sw:hash:update && webpack && firebase login && (firebase use app-nyheter-ao || (firebase login --reauth && firebase use app-nyheter-ao)) && firebase deploy",
+    "deploy:polpos": "npm run sw:hash:update && webpack && firebase login && (firebase use app-nyheter-polkaposten || (firebase login --reauth && firebase use app-nyheter-polkaposten)) && firebase deploy",
+    "deploy:salsap": "npm run sw:hash:update && webpack && firebase login && (firebase use app-nyheter-salsaposten || (firebase login --reauth && firebase use app-nyheter-salsaposten)) && firebase deploy",
+    "deploy:fridansf": "npm run sw:hash:update && webpack && firebase login && (firebase use fridans-faget || (firebase login --reauth && firebase use fridans-faget)) && firebase deploy"
+  },
+  "author": "Jørgen M. Syvertsen",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "firebase": "^11.2.0",
+    "firebase-tools": "^13.28.0",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  }
+}

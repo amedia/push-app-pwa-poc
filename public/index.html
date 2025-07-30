@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>amediaPWA</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="/src/css/app.css">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" href="/favicon-polpos.ico">
+</head>
+
+<body>
+
+  <div id="app">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <a class="mdl-navigation__link" href="/">
+            <span class="mdl-layout-title">amediaPWA - <i><span class="newspaper-name">undefined</span></i></span>
+          </a>
+          <div class="mdl-layout-spacer"></div>
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href="/">Home</a>
+            <a class="mdl-navigation__link" href="/log">Log</a>
+            <a class="mdl-navigation__link" href="/debug">Debug</a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">amediaPWA</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Home</a>
+          <a class="mdl-navigation__link" href="/log">Log</a>
+          <a class="mdl-navigation__link" href="/debug">Debug</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mat-typography">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col text-center">
+            <i><a class="newspaper-link" href="./">Go to newspaper frontpage</a></i>
+            <br />
+            <h3>Setup</h3>
+            <p>
+              To use this POC, click on the button below to enable notifications:
+            </p>
+            <button
+              class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Enable Notifications
+            </button>
+            <p>
+              Then copy your FCM Token:
+              <br />
+              <i><span class="fcm-token">undefined</span></i>
+              <br />
+              and send it to <a href="https://amedia.slack.com/team/U07JGF600UB">@Jørgen S</a> on Slack
+              to be subscribed to <b>Viktige Nyheter</b>.
+            </p>
+            <button disabled
+              class="copy-token mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Copy Token
+            </button>
+            <p>
+              When you have gotten confirmation of subscription on Slack, you should start to receive notifications from
+              Avisa Oslo.
+            </p>
+            <!-- <p>
+              You can also choose to "install" the PWA (add to homescreen),<br />
+              though there shouldn't be any functional difference (on Android).<br />
+              <i>This button is only enabled if the browser supports its implementation,<br />
+                otherwise use the browser menu to "Add to Homescreen".</i>
+            </p>
+            <button disabled
+              class="install-pwa mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Install PWA
+            </button> -->
+            <br />
+            <br />
+            <h3>Export logs</h3>
+            <p>
+              When the test period has completed,
+              press the buttons below to download the log files and send them to
+              <a href="mailto:jorgen.syvertsen@amedia.no">Jørgen S. by email</a> or
+              <a href="https://amedia.slack.com/team/U07JGF600UB">@Jørgen S on Slack</a>.
+            </p>
+            <br />
+            <button
+              class="export-log mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export FCM Log
+            </button>
+            <p></p>
+            <button
+              class="export-events mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export Push Events
+            </button>
+            <p></p>
+            <button
+              class="export-debug mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Export Debug Data
+            </button>
+            <br />
+            <br />
+            <h3>Tools</h3>
+            <button
+              class="simulate-notification mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+              Show simulated notification
+            </button>
+            <br />
+            <br />
+            <b>Referrer: </b><i><span class="referrer-field">tbd</span></i>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <script defer src="/src/js/material.min.js"></script>
+  <script src="/main.js" type="module"></script>
+</body>
+
+</html>

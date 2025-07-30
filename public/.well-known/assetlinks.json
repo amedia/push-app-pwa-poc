@@ -1,0 +1,50 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.web.app_nyheter_ao.twa",
+            "sha256_cert_fingerprints": [
+                "BA:38:F6:E2:B9:66:5E:F1:48:82:80:C1:41:F8:14:EC:88:D3:C2:AB:71:45:E7:77:5A:90:20:CF:7C:F0:BA:AF"
+            ]
+        }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.web.app_nyheter_polkaposten.twa",
+            "sha256_cert_fingerprints": [
+                "BA:38:F6:E2:B9:66:5E:F1:48:82:80:C1:41:F8:14:EC:88:D3:C2:AB:71:45:E7:77:5A:90:20:CF:7C:F0:BA:AF"
+            ]
+        }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.web.app_nyheter_tangotidende.twa",
+            "sha256_cert_fingerprints": [
+                "BA:38:F6:E2:B9:66:5E:F1:48:82:80:C1:41:F8:14:EC:88:D3:C2:AB:71:45:E7:77:5A:90:20:CF:7C:F0:BA:AF"
+            ]
+        }
+    },
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "app.web.app_nyheter_salsaposten.twa",
+            "sha256_cert_fingerprints": [
+                "BA:38:F6:E2:B9:66:5E:F1:48:82:80:C1:41:F8:14:EC:88:D3:C2:AB:71:45:E7:77:5A:90:20:CF:7C:F0:BA:AF"
+            ]
+        }
+    }
+]
