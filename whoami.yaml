@@ -1,0 +1,11 @@
+"availability": "none"
+"confidentiality": "none"
+"description": "Proof of Concept for a Progressive Web App with push notifications"
+"integrity": false
+"name": "push-app-pwa-poc"
+"owner": "kjerneteamet"
+"private-channel": "#mobile-alerts"
+"public-channel": "#mobilappene"
+"system":
+- "mobile"
+"type": "experimental"
